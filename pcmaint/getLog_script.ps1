@@ -27,14 +27,6 @@ $fullname = $uinfo.FullName;
 
 # 今日の日付
 $td = (Get-Date);
-# 基準日を取得
-if( $td.DayOfWeek.value__ -eq 0 ) {
-	# 日曜
-	$md = $td.AddDays(-6);
-} else {
-	# それ以外
-	$md = $td.AddDays(1 - $td.DayOfWeek.value__);
-}
 
 # 年のディレクトリを確認、存在していなければ作成
 $year = Join-Path $path $td.Year;
