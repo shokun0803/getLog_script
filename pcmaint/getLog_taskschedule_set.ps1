@@ -11,7 +11,7 @@ $drivePath = [Environment]::GetEnvironmentVariable("OneDriveCommercial", "User")
 $path = Join-Path $drivePath $serverPath
 
 # 存在チェック用のスクリプトパス
-$chkPath = $path + "\getLog_task.vbs";
+$chkPath = Join-Path $path getLog_task.vbs;
 
 # パスの存在をチェック
 if( -not ( Test-Path -Path $chkPath ) ) {
