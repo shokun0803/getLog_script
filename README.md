@@ -26,3 +26,5 @@ C:\pcmaint -  getLog_task.vbs
 ## execution procedure
 Edit $serverPath = "" in each script.  
 Run the getLog_taskschedule_set.ps1 file on each user's terminal.
+## Detailed information (Japanese)
+https://qiita.com/shokun0803@github/items/c5a25af344af49fa7fcf#windows-%E3%81%AE%E3%82%B5%E3%82%A4%E3%83%B3%E3%82%A4%E3%83%B3%E3%83%AD%E3%82%B0%E3%82%92%E5%8B%A4%E6%80%A0%E3%81%AB%E6%B4%BB%E7%94%A8%E3%81%97-sharepoint-%E3%81%AB%E3%83%AD%E3%82%B0%E4%BF%9D%E5%AD%98%E3%81%99%E3%82%8B
