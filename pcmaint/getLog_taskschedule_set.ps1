@@ -28,16 +28,16 @@ if( -not ( Test-Path -Path $dir ) ) {
 }
 
 # 実行スクリプトの存在を確認
-$vbsFile = $dir + "\getLog_task.vbs";
+$vbsFile = Join-Path $dir getLog_task.vbs;
 if( -not ( Test-Path -Path $vbsFile ) ) {
 	# なければファイルサーバーからコピー
-	$fromFile = $path + "\getLog_task.vbs";
+	$fromFile = Join-Path $path getLog_task.vbs;
 	Copy-Item -Path $fromFile -Destination $vbsFile
 }
-$batFile = $dir + "\getLog_task.bat";
+$batFile = Join-Path $dir getLog_task.bat;
 if( -not ( Test-Path -Path $batFile ) ) {
 	# なければファイルサーバーからコピー
-	$fromFile = $path + "\getLog_task.bat";
+	$fromFile = Join-Path $path getLog_task.bat;
 	Copy-Item -Path $fromFile -Destination $batFile
 }
 
@@ -56,14 +56,14 @@ try{
 #Write-Output $tasks.Actions;
 
 # すでにタスクが存在し、古いタスクだったら強制的に上書き
-if( $tasks.Actions.Execute -ne "C:\pcmaint\getLog_task.vbs" ) {
+if( $tasks.Actions.Execute -ne $vbsFile ) {
 	Register-ScheduledTask -TaskPath \ -TaskName pcmaint -Action $action -Trigger $trigger -Settings $settings -Force;
 }
 
 # タスク登録が完了したユーザーを登録
 $username = $env:UserName;
 $td = (Get-Date).ToString('yyyy-MM-dd HH:mm:ss');
-$outfile = $path + "\setup_user.csv";
+$outfile = Join-Path $path setup_user.csv;
 $data = @(
 	[pscustomobject]@{
 		Time = $td
