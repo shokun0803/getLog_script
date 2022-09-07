@@ -8,10 +8,12 @@ Get Windows sign-in information with PowerShell and save logs to SharePoint via 
 
 ## Directory structure
 * local
+```
 C:\pcmaint -  getLog_task.vbs
            |- getLog_task.bat
-
+```
 * SharePoint
+```
 \document library - pcmaint -  getLog_task.vbs
                             |- getLog_task.bat
                             |- check_holiday.ps1
@@ -20,7 +22,7 @@ C:\pcmaint -  getLog_task.vbs
                             |- system_chk.ps1
                   |- timecard_log - path_chk.txt
                   |- system_log
-
+```
 ## execution procedure
-Edit $serverPath = "" in each script.
+Edit $serverPath = "" in each script.  
 Run the getLog_taskschedule_set.ps1 file on each user's terminal.
